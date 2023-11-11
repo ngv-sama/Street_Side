@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Travel Plans!!!</title>
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #ffffff; /* Light blue background */
+        }
+
+        .itinerary-container {
+            display: flex;
+            flex-direction: column;
+            width: 800px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .left-column,
+        .right-column {
+            padding: 20px;
+        }
+
+        .left-column {
+            border-bottom: 1px solid #d3d3d3; /* Light gray border at the bottom */
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #FFA500; 
+        }
+
+        p {
+            margin-bottom: 16px;
+            transition: transform 0.2s; /* Smooth transition for enlargement */
+        }
+
+        p:hover {
+            transform: scale(1.1); /* Enlarge on hover */
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="itinerary-container">
+        <div class="left-column">
+            <h2>Generated Itinerary</h2>
+            <p><strong>Name:</strong> {{ name }}</p>
+            <p><strong>Age:</strong> {{ age }}</p>
+            <p><strong>Start Date:</strong> {{ start_date }}</p>
+            <p><strong>End Date:</strong> {{ end_date }}</p>
+            <p><strong>Dietary Restrictions:</strong> {{ dietary_restrictions }}</p>
+            <p><strong>Budget:</strong> {{ budget }}</p>
+            <p><strong>Starting Location:</strong> {{ starting_location }}</p>
+            <p><strong>Destination:</strong> {{ destination }}</p>
+        </div>
+
+        <div class="right-column">
+            <h2>Itinerary Details</h2>
+            {% for paragraph in itinerary_paragraphs %}
+                <p>{{ paragraph }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

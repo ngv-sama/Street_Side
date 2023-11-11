@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Itinerary App - Suggestions</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Top 4 Travel Suggestions</h1>
+    
+    <!-- Display the top 4 travel suggestions as big cards -->
+    {% for suggestion in travel_options %}
+        <div class="card" onclick="selectOption('{{ suggestion }}')">
+            <h3>{{ suggestion }}</h3>
+        </div>
+    {% endfor %}
+
+    <!-- Form to select a destination and generate itinerary (hidden initially) -->
+    <form method="post" action="/generate_itinerary" id="generateForm" style="display: none;">
+        <label for="selected_option">Selected destination:</label>
+        <input type="text" id="selected_option" name="selected_option" readonly required>
+        <br>
+
+        <!-- Hidden input fields to pass user data -->
+        <input type="hidden" name="name" value="{{ name }}">
+        <input type="hidden" name="age" value="{{ age }}">
+        <input type="hidden" name="travel_dates" value="{{ travel_dates }}">
+        <input type="hidden" name="dietary_restrictions" value="{{ dietary_restrictions }}">
+        <input type="hidden" name="budget" value="{{ budget }}">
+        <input type="hidden" name="starting_location" value="{{ starting_location }}">
+
+        <input type="submit" value="Generate Itinerary">
+    </form>
+
+    <script>
+        function selectOption(option) {
+            // Set the selected option in the form
+            document.getElementById('selected_option').value = option;
+            // Show the form
+            document.getElementById('generateForm').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreetSide-Itinerary Generator!!!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffffff;
+        }
+
+        #intro {
+            text-align: center;
+            font-size: 24px;
+            line-height: 1.6; /* Adjust as needed for increased line spacing */
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        form {
+            display: inline-block; /* Keep the form inline with the paragraph */
+        }
+
+        input {
+            width: 150px; /* Adjust as needed */
+            border: 1px solid #FFA500; /* Yellow color */
+            border-radius: 4px;
+            padding: 8px; /* Increased padding */
+            margin: 0 4px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #FFA500; /* Yellow color */
+            color: #ffffff;
+            padding: 12px; /* Increased padding */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #preferences
+        {
+            width: 400px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div id="intro">
+        <h1>Hey StreetSide!!!</h1>
+        <form action="/" method="post">
+            <p>My name is <input type="text" id="name" name="name" placeholder="your name"> and I am <input type="text" id="age" name="age" placeholder="your age"> I live in <input type="text" id="location" name="location" placeholder="your location"> and want to go to <input type="text" id="destination" name="destination" placeholder="your destination"> from <input type="date" id="start_date" name="start_date" placeholder="start date"> till <input type="date" id="end_date" name="end_date" placeholder="end date"></p> 
+            <p>I have the following <input type="text" id="dietary" name="dietary" placeholder="dietary restriction"> and have a budget of <input type="text" id="budget" name="budget" placeholder="your budget"></p> 
+            <p> On this trip I want to <input type="text" id="preferences" name="preferences" placeholder="special preferences"></p>
+            <p>How detailed should the Itinerary be on a scale of <input type="text" id="temp" name="temp" placeholder="1-10"></p>
+            <button type="submit">Generate Itinerary</button>
+        </form>
+    </div>
+</body>
+</html>
